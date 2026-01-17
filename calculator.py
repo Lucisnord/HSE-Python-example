@@ -23,6 +23,16 @@ def divide(a, b):
         raise ValueError("Нельзя делить на ноль!")
     return a / b
 
+def power(a, b):
+    """Возведение в степень"""
+    return a ** b
+
+def modulus(a, b):
+    """Остаток от деления"""
+    if b == 0:
+        raise ValueError("Нельзя делить на ноль!")
+    return a % b
+
 def main():
     """Основная функция калькулятора"""
     print("=== Простой калькулятор ===")
@@ -48,6 +58,12 @@ def main():
         elif choice == '4':
             result = divide(num1, num2)
             operator = "/"
+        elif choice == '5':
+            result = power(num1, num2)
+            operator = "^"
+        elif choice == '6':
+            result = modulus(num1, num2)
+            operator = "%"           
         else:
             print("Неверный выбор!")
             return
